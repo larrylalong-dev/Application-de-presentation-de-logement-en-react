@@ -1,0 +1,29 @@
+@import "../../style/utils";
+
+.lodgingPage_main {
+  @include mainMargin;
+  @include responsiveMobile {
+    @include defaultMarginMobile;
+  }
+  .dropdown--deployed .dropdown_content {
+    min-height: 220px;
+    @include responsiveMobile {
+      min-height: inherit;
+    }
+  }
+}
+
+.lodgingInfos_general {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  margin: 20px 0;
+  @include responsiveMobile {
+    flex-direction: column;
+    height: inherit;
+    align-items: flex-start;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}

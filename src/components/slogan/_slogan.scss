@@ -1,0 +1,68 @@
+@import "../../style/utils";
+
+.slogan--sea {
+  position: relative;
+  @include defaultMargin;
+  z-index: 1;
+  height: 223px;
+  border-radius: 25px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/background-slogan.png");
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 30px;
+  @include responsiveMobile {
+    @include defaultMarginMobile;
+    height: 111px;
+  }
+  h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    text-align: center;
+    color: map-get($colors, snow);
+    font-size: map-get($sizes, xl);
+    font-weight: map-get($weights, normal);
+    @include responsiveMobile {
+      text-align: left;
+      padding: 20px;
+      font-size: map-get($sizes, m);
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.slogan--mountain {
+  position: relative;
+  @include defaultMargin;
+  z-index: 1;
+  height: 223px;
+  border-radius: 25px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/background-slogan-mountains.png");
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 30px;
+  @include responsiveMobile {
+    @include defaultMarginMobile;
+    height: 223px;
+  }
+  h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    text-align: center;
+    color: map-get($colors, snow);
+    font-size: map-get($sizes, xl);
+    font-weight: map-get($weights, normal);
+    @include responsiveMobile {
+      text-align: left;
+      padding: 20px;
+      font-size: map-get($sizes, m);
+    }
+  }
+}

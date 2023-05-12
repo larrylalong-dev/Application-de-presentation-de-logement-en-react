@@ -1,0 +1,57 @@
+@import "../../style/utils";
+
+.lodgingInfos_headerLodging {
+  @include default;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-weight: map-get($weights, normal);
+    font-size: map-get($sizes, l);
+    color: map-get($colors, pumpkin);
+    @media screen and (max-width: 1024px) {
+      font-size: map-get($sizes, base);
+    }
+  }
+  h2 {
+    font-weight: map-get($weights, normal);
+    font-size: map-get($sizes, base);
+    color: map-get($colors, pumpkin);
+    @media screen and (max-width: 1024px) {
+      font-size: map-get($sizes, s);
+      margin: 5px 0px;
+    }
+  }
+  .lodgingInfos_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 7px;
+    @include responsiveMobile {
+      margin-top: 10px;
+    }
+    li {
+      background: map-get($colors, pumpkin);
+      font-size: map-get($sizes, s);
+      color: map-get($colors, snow);
+      padding: 2px 30px;
+      border-radius: 10px;
+      line-height: 19px;
+      @include responsiveMobile {
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 1px 30px;
+      }
+    }
+  }
+}

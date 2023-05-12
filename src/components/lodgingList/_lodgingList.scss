@@ -1,0 +1,66 @@
+@import "../../style/utils";
+
+.homepageMain_lodgingList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @include responsiveMobile {
+    flex-direction: column;
+  }
+  .lodgingList_card {
+    max-width: 340px;
+    max-height: 340px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    background: map-get($colors, gradient);
+    overflow: hidden;
+    @include responsiveMobile {
+      width: 100%;
+      max-width: inherit;
+      height: 255px;
+      max-height: inherit;
+    }
+    picture {
+      display: block;
+      width: 100%;
+      height: 340px;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 340px;
+        top: 0;
+        left: 0;
+        background: map-get($colors, gradient);
+      }
+    }
+    img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+    h3 {
+      position: absolute;
+      width: 80%;
+      height: 52px;
+      bottom: 5px;
+      left: 20px;
+      z-index: 3;
+      color: map-get($colors, snow);
+      font-size: map-get($sizes, base);
+      font-weight: map-get($weights, normal);
+      @include responsiveMobileXS {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    &:hover {
+      box-shadow: 3px 4px 5px map-get($colors, mouse);
+    }
+  }
+}

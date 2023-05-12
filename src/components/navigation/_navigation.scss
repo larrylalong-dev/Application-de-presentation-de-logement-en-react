@@ -1,0 +1,29 @@
+@import "../../style/utils";
+
+.nav {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  @include responsiveMobile {
+    flex-wrap: wrap;
+    gap: 9%;
+    width: 50%;
+  }
+}
+.nav a {
+  color: map-get($colors, pumpkin);
+  font-size: map-get($sizes, m);
+  &:hover {
+    text-decoration: underline;
+  }
+  @include responsiveMobile {
+    font-size: map-get($sizes, xs);
+  }
+}
+.nav_item--inactive {
+  text-decoration: none;
+}
+.nav_item--active {
+  text-decoration: underline;
+}

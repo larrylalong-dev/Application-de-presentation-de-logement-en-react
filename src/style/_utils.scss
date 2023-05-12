@@ -1,0 +1,65 @@
+$colors: (
+  pumpkin: #ff6060,
+  snow: #fff,
+  night: #000,
+  gradient:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%),
+  mouse: #c4c4c4,
+  lightmouse: #e3e3e3,
+  lightengrey: #f6f6f6,
+);
+
+$sizes: (
+  xs: 12px,
+  s: 14px,
+  base: 18px,
+  m: 24px,
+  l: 36px,
+  xl: 48px,
+  max: 288px,
+  lineheight: 25px,
+);
+
+$weights: (
+  slim: 400,
+  normal: 500,
+  boldy: 700,
+);
+
+@mixin default {
+  margin: 0;
+  padding: 0;
+  font-variant: normal;
+  text-decoration: none;
+  list-style-type: none;
+  border: none;
+  background: none;
+}
+
+@mixin defaultMargin {
+  margin: 0px 100px;
+}
+
+@mixin defaultMarginMobile {
+  margin: 0px 20px;
+}
+
+@mixin mainMargin {
+  margin: 30px 100px;
+}
+
+@mixin mainMarginMobile {
+  margin: 30px 20px;
+}
+
+@mixin responsiveMobile {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin responsiveMobileXS {
+  @media screen and (max-width: 340px) {
+    @content;
+  }
+}

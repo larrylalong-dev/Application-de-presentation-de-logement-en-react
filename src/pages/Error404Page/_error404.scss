@@ -1,0 +1,38 @@
+@import "../../style/utils";
+
+.error404_main {
+  text-align: center;
+  @include mainMargin;
+  @include responsiveMobile {
+    @include mainMarginMobile;
+  }
+  color: map-get($colors, pumpkin);
+  margin-bottom: 100px;
+  h1 {
+    font-size: map-get($sizes, max);
+    font-weight: map-get($colors, boldy);
+    @include responsiveMobile {
+      font-size: 96px;
+    }
+  }
+  p {
+    font-size: map-get($sizes, l);
+    font-weight: map-get($colors, normal);
+    margin-bottom: 150px;
+    @include responsiveMobile {
+      font-size: map-get($sizes, base);
+      margin-bottom: 75px;
+    }
+  }
+  a {
+    display: block;
+    color: map-get($colors, pumpkin);
+    font-size: map-get($sizes, base);
+    font-weight: map-get($colors, normal);
+    text-decoration: underline;
+    margin-bottom: 25px;
+    @include responsiveMobile {
+      font-size: map-get($sizes, s);
+    }
+  }
+}

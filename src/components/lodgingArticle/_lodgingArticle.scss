@@ -1,0 +1,15 @@
+@import "../../style/utils";
+
+.lodgingInfos_articleLodging {
+  display: flex;
+  justify-content: space-between;
+  @include responsiveMobile {
+    flex-direction: column;
+  }
+  .articleLodging_card {
+    width: 47%;
+    @include responsiveMobile {
+      width: 100%;
+    }
+  }
+}

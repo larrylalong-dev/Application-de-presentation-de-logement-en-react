@@ -1,0 +1,128 @@
+@import "../../style/utils";
+
+@keyframes dropdownContentAnim {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes dropdownContentAnimUp {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+// Style when dropdown is undeployed
+.dropdown {
+  width: 100%;
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    font-size: map-get($sizes, base);
+    font-weight: map-get($weights, normal);
+    color: map-get($colors, snow);
+    background: map-get($colors, pumpkin);
+    padding: 10px 10px 10px 20px;
+    border-radius: 10px;
+    @include responsiveMobile {
+      padding: 5px 7px 7px 10px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+    span {
+      cursor: pointer;
+      transform: rotate(180deg);
+      transition: transform 300ms;
+      @include responsiveMobile {
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  .dropdown_content {
+    position: relative;
+    z-index: 4;
+    margin-top: -15px;
+    height: 0px;
+    background: map-get($colors, lightengrey);
+    border-radius: 10px;
+    padding: 35px 20px 20px 20px;
+    color: map-get($colors, pumpkin);
+    opacity: 0;
+    transform-origin: top center;
+    transform: scaleY(0);
+    animation: 200ms ease-in-out forwards dropdownContentAnimUp;
+    @include responsiveMobile {
+      padding: 25px 15px 15px 15px;
+    }
+  }
+}
+
+// Style when dropdown is deployed
+.dropdown--deployed {
+  width: 100%;
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    font-size: map-get($sizes, base);
+    font-weight: map-get($weights, normal);
+    color: map-get($colors, snow);
+    background: map-get($colors, pumpkin);
+    padding: 10px 10px 10px 20px;
+    border-radius: 10px;
+    @include responsiveMobile {
+      padding: 5px 7px 7px 10px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+    span {
+      cursor: pointer;
+      transform: rotate(0deg);
+      transition: transform 300ms;
+      @include responsiveMobile {
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  .dropdown_content {
+    position: relative;
+    z-index: 4;
+    margin-top: -15px;
+    height: fit-content;
+    background: map-get($colors, lightengrey);
+    border-radius: 10px;
+    padding: 35px 20px 20px 20px;
+    color: map-get($colors, pumpkin);
+    margin-bottom: 30px;
+    font-size: map-get($sizes, base);
+    line-height: map-get($sizes, lineheight);
+    font-weight: map-get($weights, slim);
+    opacity: 1;
+    transform-origin: top center;
+    animation: 200ms ease-in-out forwards dropdownContentAnim;
+    @include responsiveMobile {
+      padding: 25px 10px 10px 10px;
+      font-size: map-get($sizes, xs);
+      line-height: map-get($sizes, base);
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+  }
+}
